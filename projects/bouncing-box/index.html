@@ -5,16 +5,22 @@
 	<title>Bouncing Box</title>
 	<script src="jquery.min.js"></script>
 	<style>
+		.theText{
+			color: white;
+		}
 		.box {
-			width: 70px;
-			height: 70px;
-			background-color: teal;
+			width: 128px;
+			height: 128px;
+			background-image: url(data:image/jpeg;base64,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);
 			font-size: 300%;
 			text-align: center;
 			display: block;
 			position: absolute;
 			top: 100px;
 			left: 250px;  /* <--- Change me! */
+		}
+		body{
+			background: black;
 		}
 	</style>
 	<!-- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
@@ -23,7 +29,7 @@
 <body class="board">
 	<!-- HTML for the box -->
 	<div class="box">?</div>
-
+    <h1 class="theText">corner hits: <p class="theText" type="text" id="someInput" name="someInput"></p></h1>
 	<script>
 		(function(){
 			'use strict'
@@ -35,8 +41,8 @@
 			
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
-			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-
+			var boardWidth = board.width();// the maximum X-Coordinate of the screen
+            var boardHeight = jQuery(window).height();
 			// Every 50 milliseconds, call the update Function (see below)
 			setInterval(update, 50);
 			
@@ -44,8 +50,9 @@
 			box.on('click', handleBoxClick);
 
 			// moves the Box to a new position on the screen along the X-Axis
-			function moveBoxTo(newPositionX) {
+			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
+				box.css('top', newPositionY);
 			}
 
 			// changes the text displayed on the Box
@@ -61,7 +68,9 @@
 			var positionX = 0;
             var points = 0;
             var speed = 10;
-			
+			var positionY = 0;
+			var speedY = 10;
+			var cornerHits = 0;
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -69,13 +78,37 @@
 			*/
 			function update() {
 				positionX = positionX + speed;
-				moveBoxTo(positionX);
-                if (positionX > boardWidth - 60){
+				positionY = positionY + speedY;
+				moveBoxTo(positionX, positionY);
+                if (positionX > boardWidth - 120){
                 	speed = -speed;
                 }
                 if (positionX < 0){
                 	speed = -speed;
                 }
+                if (positionY > boardHeight - 120){
+                	speedY = -speedY;
+                }
+                if (positionY < 0){
+                	speedY = -speedY;
+                }
+                if (positionY === 0){
+                	if (positionX === 0){
+                		cornerHits++;
+                	}
+                	if (positionX === boardWidth - 120){
+                		cornerHits++;
+                	}
+                }
+                if (positionY === boardHeight - 120){
+                	if (positionX === 0){
+                		cornerHits++;
+                	}
+                	if (positionX === boardWidth - 120){
+                		cornerHits++;
+                	}
+                }
+                document.getElementById("someInput").innerHTML = cornerHits;
 			}
 
 			/* 
@@ -87,6 +120,7 @@
 				positionX = 0;
                 changeBoxText(points);
                 speed = speed + 3;
+                speedY = speedY + 3;
                 points++;
 			}
 		})();
